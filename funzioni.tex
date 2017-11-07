@@ -1,0 +1,114 @@
+
+% !TeX encoding = UTF-8
+% !TeX spellcheck = it_IT
+% !TeX root = funzioni.tex
+% 7/09/2017 :: 12:34:22 :: 
+\documentclass[openany]{book}%
+\input{../Mod_base/base}
+\geometry{top=1.5cm,bottom=1.5cm}
+\input{../Mod_base/matematica}
+\input{../Mod_base/tabelle}
+\input{../Mod_base/rifIndici}
+\input{../Mod_base/stand_class}
+\input{../Mod_base/rifIndici}
+\input{../Mod_base/pagina}
+\input{../Mod_base/indice}
+\input{../Mod_base/date}
+\input{../Mod_base/grafica}
+\input{../Mod_base/tcolorboxgest}
+\input{../Mod_base/loghi}
+\makeindex[options=-s ../Mod_base/oldclaudio.sti]
+\crefname{graf}{grafico}{grafici}
+\usepackage{enumitem}
+\DeclareCaptionType[fileext=lod]{diagram}
+\newcommand\litem[1]{\item{\bfseries #1,\enspace}}
+\newenvironment{tabitemize}
+{\vspace*{-\baselineskip}\itemize[topsep=1ex,leftmargin=*]}
+{\enditemize\mbox{}\vspace*{-\baselineskip}\vspace*{-2ex}}
+\makeatletter
+\renewcommand\frontmatter{%
+	\cleardoublepage
+	\@mainmatterfalse
+	%\pagenumbering{roman}
+}
+\renewcommand\mainmatter{%
+	\cleardoublepage
+	\@mainmattertrue
+	%\pagenumbering{arabic}
+}
+\newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
+
+\usepackage{hyperxmp}
+\usepackage{hyperref}
+\title{Formulario}
+\author{Claudio Duchi}
+\date{\datetime}
+\hypersetup{%
+	pdfencoding=auto,
+	urlcolor={blue},
+	pdftitle={Funzioni e limiti},
+	pdfsubject={Funzioni e limiti},
+	pdfstartview={FitH},
+	pdfpagemode={UseOutlines},
+	pdflicenseurl={http://creativecommons.org/licenses/by-nc-nd/3.0/},
+	pdflang={it},
+	pdfmetalang={it},
+	pdfkeywords={Analisi},
+	pdfcopyright={Copyright (C) 2017, Claudio Duchi},
+	pdfcontacturl={http://breviariomatematico.altervista.org},
+	pdfcontactpostcode={},
+	pdfcontactphone={},
+	pdfcontactemail={claduc},
+	pdfcontactcountry={Italy},
+	pdfcontactcity={Perugia},
+	pdfcontactaddress={},
+	pdfcaptionwriter={Claudio Duchi},
+	pdfauthortitle={},%
+	pdfauthor={Claudio Duchi},
+	linkcolor={blue},
+	colorlinks=true,
+	citecolor={red},
+	breaklinks,
+	bookmarksopen,
+	verbose,
+	baseurl={http://breviariomatematico.altervista.org}
+}
+\includeonly{
+razionali,
+irrazionali,
+}
+\begin{document}
+		\frontmatter
+\hypersetup{pageanchor=false}
+\begin{titlepage}
+	\begin{center}
+		\input{../Mod_base/Lgrande}\\[1cm]
+		\textsc{\LARGE Claudio Duchi}\\[1.5cm]
+		\HRule \\[0.4cm]
+		{ \huge \bfseries Funzioni e limiti}\\[0.4cm]
+		\HRule \\[1.5cm]
+		\vfill
+	\end{center}
+\end{titlepage}
+\mainmatter
+\hypersetup{pageanchor=true}
+\input{../Mod_base/copyright}
+\tableofcontents 
+\cleardoublepage
+\listoftables
+\addcontentsline{toc}{chapter}{\listtablename}
+\cleardoublepage
+\listoffigures
+\addcontentsline{toc}{chapter}{\listfigurename}
+\cleardoublepage\renewcommand\lstlistlistingname{Elenco esempi}
+\addcontentsline{toc}{chapter}{\lstlistlistingname}
+\addcontentsline{toc}{section}{Esempi}
+\lstlistoflistings{}
+\tcblistof[\section*]{thm}{Esempi}
+\tcblistof[\section*]{sfnz}{Esempi di funzioni}
+\include{razionali}
+\include{irrazionali}
+\input{../Mod_base/MezziUsati}
+\addcontentsline{toc}{chapter}{\indexname}
+\printindex
+\end{document}
