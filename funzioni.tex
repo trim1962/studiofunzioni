@@ -9,6 +9,8 @@
 \input{../Mod_base/matematica}
 \input{../Mod_base/tabelle}
 \input{../Mod_base/rifIndici}
+\crefname{graf}{grafico}{grafici}
+\makeindex[options=-s ../Mod_base/oldclaudio.sti]
 \input{../Mod_base/stand_class}
 \input{../Mod_base/rifIndici}
 \input{../Mod_base/pagina}
@@ -17,8 +19,8 @@
 \input{../Mod_base/grafica}
 \input{../Mod_base/tcolorboxgest}
 \input{../Mod_base/loghi}
-\makeindex[options=-s ../Mod_base/oldclaudio.sti]
-\crefname{graf}{grafico}{grafici}
+
+
 \usepackage{enumitem}
 \DeclareCaptionType[fileext=lod]{diagram}
 \newcommand\litem[1]{\item{\bfseries #1,\enspace}}
@@ -76,6 +78,7 @@
 \includeonly{
 razionali,
 irrazionali,
+limiti,
 }
 \begin{document}
 		\frontmatter
@@ -108,6 +111,7 @@ irrazionali,
 \tcblistof[\section*]{sfnz}{Esempi di funzioni}
 \include{razionali}
 \include{irrazionali}
+\include{limiti}
 \input{../Mod_base/MezziUsati}
 \addcontentsline{toc}{chapter}{\indexname}
 \printindex

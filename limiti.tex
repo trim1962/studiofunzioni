@@ -1,0 +1,40 @@
+% !TeX encoding = UTF-8
+% !TeX spellcheck = it_IT
+% !TeX root = funzioni.tex
+% 7/11/2017 :: 10:11:07 :: 
+\chapter{Limiti}
+\section{Limite infinito per x che tende a valore finito}
+\begin{esempiot}{Razionale fratta *}{}
+	Consideriamo la funzione\[f(x)=\dfrac{1}{x}\]
+\end{esempiot}
+\begin{enumerate}[noitemsep]
+	\litem{Classificazione}la funzione è una funzione razionale fratta\index{Funzione!razionale!fratta}.
+	\litem{Dominio}il dominio della funzione è $\R-\lbrace 0\rbrace$.
+	\litem{Positività}risolviamo la disequazione
+	\begin{align*}
+	&\dfrac{1}{x}>0 
+	\end{align*} La funzione è positiva per 
+	Ottengo il~\cref{fig:limite1}. La funzione è positiva per $x>0$
+	\item Asintoti La funzione non è definita per $x=0$ e studiando la positività abbiamo \begin{align*}
+	\lim_{x\to x_0^+}\dfrac{1}{x}=&+\infty\\
+	\lim_{x\to x_0^-}\dfrac{1}{x}=&-\infty
+	\end{align*}\index{Asintoto!verticale}
+\end{enumerate}
+La~\cref{exa:ratio2} riassume quanto detto.
+\begin{figure}
+	\captionsetup{name=Grafico}
+	\centering
+	\includestandalone[width=8.5cm]{dominio/disequazione3}
+	\caption{Segno funzione}
+	\label[graf]{fig:limite1}
+\end{figure}
+\begin{funzionet}{Razionale fratta *}{limite1}
+	\includestandalone[width=\textwidth]{dominio/razio2}
+	\tcblower
+	\begin{itemize}
+		\item $y=\dfrac{1}{x}$
+		\item Dominio $\R-\lbrace0\rbrace$
+		\item Codominio $\R$
+		\item Positività $x\geq0$
+	\end{itemize}
+\end{funzionet}
