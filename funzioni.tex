@@ -8,16 +8,16 @@
 \geometry{top=1.5cm,bottom=1.5cm}
 \input{../Mod_base/matematica}
 \input{../Mod_base/tabelle}
-\input{../Mod_base/rifIndici}
-\crefname{graf}{grafico}{grafici}
+%\input{../Mod_base/rifIndici}
+\usepackage{imakeidx}
 \makeindex[options=-s ../Mod_base/oldclaudio.sti]
 \input{../Mod_base/stand_class}
-\input{../Mod_base/rifIndici}
+%\input{../Mod_base/rifIndici}
 \input{../Mod_base/pagina}
 \input{../Mod_base/indice}
 \input{../Mod_base/date}
 \input{../Mod_base/grafica}
-\input{../Mod_base/tcolorboxgest}
+
 \input{../Mod_base/loghi}
 
 
@@ -39,12 +39,16 @@
 	%\pagenumbering{arabic}
 }
 \newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
-
+\usepackage{qrcode}
+\usepackage[italian]{varioref}
 \usepackage{hyperxmp}
-\usepackage{hyperref}
-\title{Formulario}
+\usepackage[pdfpagelabels]{hyperref}
+\usepackage[italian]{cleveref}
+\input{../Mod_base/tcolorboxgest}
+\crefname{graf}{grafico}{grafici}
 \author{Claudio Duchi}
 \date{\datetime}
+\title{Funzioni e limiti}
 \hypersetup{%
 	pdfencoding=auto,
 	urlcolor={blue},
@@ -56,7 +60,7 @@
 	pdflang={it},
 	pdfmetalang={it},
 	pdfkeywords={Analisi},
-	pdfcopyright={Copyright (C) 2017, Claudio Duchi},
+	pdfcopyright={Copyright (C) 2018, Claudio Duchi},
 	pdfcontacturl={http://breviariomatematico.altervista.org},
 	pdfcontactpostcode={},
 	pdfcontactphone={},
@@ -75,10 +79,17 @@
 	verbose,
 	baseurl={http://breviariomatematico.altervista.org}
 }
-\includeonly{
-razionali,
-irrazionali,
-limiti,
+
+\input{compilaUNO}
+\usepackage{tkz-berge}
+\newcommand{\polylogo}[1]{
+	\begin{center}
+		\begin{tikzpicture}
+		\renewcommand*{\VertexBallColor}{green!50!black}
+		\GraphInit[vstyle=Art]
+		\grComplete[RA=5]{#1}
+		\end{tikzpicture}
+	\end{center}
 }
 \begin{document}
 		\frontmatter
@@ -88,9 +99,12 @@ limiti,
 		\input{../Mod_base/Lgrande}\\[1cm]
 		\textsc{\LARGE Claudio Duchi}\\[1.5cm]
 		\HRule \\[0.4cm]
-		{ \huge \bfseries Funzioni e limiti}\\[0.4cm]
+		{ \huge \bfseries FUNZIONI E LIMITI}\\[0.4cm]
+		{\LARGE \textsc{ESEMPI}}
 		\HRule \\[1.5cm]
 		\vfill
+		\polylogo{13}		
+		{\large $-$\DTMnow$-$}
 	\end{center}
 \end{titlepage}
 \mainmatter
@@ -109,9 +123,7 @@ limiti,
 \lstlistoflistings{}
 \tcblistof[\section*]{thm}{Esempi}
 \tcblistof[\section*]{sfnz}{Esempi di funzioni}
-\include{razionali}
-\include{irrazionali}
-\include{limiti}
+\input{compilaDUE}
 \input{../Mod_base/MezziUsati}
 \addcontentsline{toc}{chapter}{\indexname}
 \printindex
